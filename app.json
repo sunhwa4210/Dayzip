@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "day.zip",
-    "slug": "day.zip",
+    "name": "dayzip",
+    "slug": "dayzip",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.sunflowerhwa.dayzip"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7a94def5-b0da-4dc9-b5fb-e3d9be8b91a2"
+      }
     }
   }
 }
