@@ -1,23 +1,28 @@
 {
   "expo": {
-    "name": "dayzip",
-    "slug": "dayzip",
+    "name": "day_zip",
+    "slug": "day_zip",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/appicon.png",
     "scheme": "dayzip",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dayzip.app"
     },
     "android": {
+      "package": "com.dayzip.app",
+      "versionCode": 1,
+      "permissions": [],
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.sunflowerhwa.dayzip"
+      "useNextNotificationsApi": true
     },
     "web": {
       "bundler": "metro",
@@ -29,10 +34,22 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/splashimg.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "gradlePluginVersion": "8.6.0",
+            "kotlinVersion": "2.0.21",
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35
+          }
         }
       ]
     ],
@@ -42,8 +59,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "7a94def5-b0da-4dc9-b5fb-e3d9be8b91a2"
+        "projectId": "0de03710-e774-4f3f-bf3f-cf512cd5ce25"
       }
-    }
+    },
+    "owner": "yeeeeeeun"
   }
 }

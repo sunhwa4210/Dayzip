@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "190417084213",
+    "project_id": "dayzip-535f3",
+    "storage_bucket": "dayzip-535f3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190417084213:android:d2da3e88d5eaa24598367c",
+        "android_client_info": {
+          "package_name": "com.dayzip.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQPocbHt6mi5_H-gYzHEC1eajocJtW7lM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
