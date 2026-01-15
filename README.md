@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# Day.zip
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+감정 표현이 어려운 사용자를 위한  
+AI 기반 감정 루틴 일기 앱 (iOS)
 
-## Get started
+배포 링크: https://buly.kr/BTQw3j3  
+프로젝트 상세 설명 링크: https://www.notion.so/Day-zip-2694b6ee31ac80bb84e7ffb5299b8346?source=copy_link
+개발 기간: 2025.03 – 2025.12  
+역할: 서비스 기획 · 풀스택 개발 · 사용자 테스트 및 개선
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 프로젝트 소개
 
-2. Start the app
+Day.zip은  
+“일기가 도움이 된다는 건 알지만, 막상 쓰려고 하면 첫 문장에서 멈추는 사용자”를 위해  
+**기록의 진입 장벽을 낮추고, 회고까지 자연스럽게 이어지도록 설계한 감정 루틴 일기 앱**입니다.
 
-   ```bash
-   npx expo start
-   ```
+감정을 잘 쓰게 만드는 것이 아니라,  
+**감정을 꺼내기까지 사용자가 계속 판단해야 하는 구조 자체를 줄이는 것**을 목표로 설계했습니다.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 문제 정의
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+사용자 조사와 테스트를 통해 다음과 같은 패턴을 확인했습니다.
 
-## Get a fresh project
+- 감정을 문장으로 표현하는 것이 부담스러워 기록을 시작하지 못함
+- 기록 후 즉각적인 피드백이 없어 동기 부여가 약함
+- 기록이 쌓여도 회고로 이어지지 않음
 
-When you're ready, run:
+이 문제는 사용자의 성실성 문제가 아니라,  
+**기록을 시작하고 유지하기까지 계속 생각해야 하는 UX 구조**에서 발생한다고 판단했습니다.
 
-```bash
-npm run reset-project
-```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 해결 방향
 
-## Learn more
+- 감정을 “잘 쓰게” 하는 것이 아니라, **기록 시작 부담 자체를 줄이기**
+- 기록 이후 즉각적인 피드백을 제공해 **회고로 자연스럽게 연결되도록 설계**
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 핵심 기능
 
-## Join the community
+- **감정 선택 기반 기록 시작**
+  - 문장 입력 없이 감정 선택과 간단한 상황 입력으로 기록 시작
 
-Join our community of developers creating universal apps.
+- **AI 꼬리 질문을 통한 단계적 기록 유도**
+  - 감정과 상황을 바탕으로  
+    “그때 기분은 어땠어?”, “왜 그렇게 느꼈을까?”와 같은 질문을 자동 제시
+  - 사용자는 질문에 답하기만 하면 기록이 자연스럽게 완성됨
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **AI 이미지 생성 기반 시각적 피드백**
+  - 사용자가 작성한 기록을 기반으로 감정을 이미지로 변환
+  - 기록에 대한 심리적 보상과 감정 인식 강화
+
+- **기록 → 피드백 → 회고 메모로 이어지는 루틴 구조**
+  - 단발성 기록이 아닌, 지속적인 회고 경험을 목표로 흐름 설계
+
+---
+
+## 사용자 테스트 & 개선
+
+### 발견한 핵심 병목
+- 일기 작성 **시작 단계에서 가장 높은 이탈** 발생
+- 감정 선택 이후 입력이 비어 있어 사용자가 흐름을 스스로 만들어야 했음
+
+### 개선 방식
+- 감정 선택 후 AI가 질문을 자동 제시하도록 구조 변경
+- 질문에 답하는 것만으로 기록이 이어지도록 입력 흐름 단순화
+- 홈 화면에서 ‘기록 시작’과 ‘탐색’을 분리하여 판단 부담 감소
+
+이 과정을 통해  
+**사용자가 고민하던 지점을 시스템이 대신하도록 UX 구조를 개선**했습니다.
+
+---
+
+## 기술 스택
+
+- **Frontend / App**: React Native, Expo
+- **Language**: TypeScript, JavaScript
+- **Backend / DB**: Firebase
+- **AI**: OpenAI API
+- **Deployment**: iOS App Store
+
+---
+
+## 배운 점
+
+- 기능 구현보다 **입력 구조와 사용자 판단 비용을 줄이는 것이 UX에 더 큰 영향을 준다**는 점
+- 프론트엔드에서도 사용자 테스트를 통해 문제를 구조적으로 정의하고 개선할 수 있다는 경험
+- AI는 기능 자체보다 **UX 흐름 안에서 언제, 왜 쓰이는지가 중요**하다는 인식
+
+---
+
